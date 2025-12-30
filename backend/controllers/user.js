@@ -6,12 +6,15 @@ exports.welcome = (req, res) => {
         status: "Success",
         message: "Welcome to Home page"
     });
-}
+};
 
 exports.createUser = async (req, res) => {
-   try{
+   try {
     const { name, email, phone, message } = req.body;
-    
+
+    // DEBUG LOG
+    console.log("REQ BODY:", req.body);
+
     // Validate required fields
     if (!name || !email) {
         return res.status(400).json({
@@ -27,20 +30,20 @@ exports.createUser = async (req, res) => {
         message
     });
 
-    console.log("user created successfully");
+    // DEBUG LOG
+    console.log("USER SAVED:", createdUser._id);
 
-    res.status(200).json({
+    res.status(201).json({
         status: "Success",
         message: "user created successfully",
         data: createdUser
-    })
+    });
 
-   }
-   catch(err){
+   } catch (err) {
     console.error("error while creating user:", err);
     res.status(500).json({
         status: "Error",
         message: err.message || "error while creating user"
     });
    }
-}
+};
