@@ -1,21 +1,18 @@
-
 const mongoose = require("mongoose");
-
 require("dotenv").config();
 
-exports.dbConnect = () => {
+exports.dbConnect = async () => {
+  try {
     if (!process.env.MONGODB_URL) {
-        console.error("MONGODB_URL is not defined in environment variables");
-        process.exit(1);
+      console.error("❌ MONGODB_URL missing");
+      return;
     }
-    
-    mongoose.connect(process.env.MONGODB_URL)
-    .then(() => {
-        console.log("DB connected successfully");
-    })
-    .catch( (err) => {
-        console.log("DB CONNECTION ISSUES");
-        console.error(err);
-        process.exit(1);
-    } );
-}
+
+    await mongoose.connect(process.env.MONGODB_URL);
+    console.log("✅ DB connected successfully");
+  } catch (err) {
+    console.error("❌ DB CONNECTION FAILED");
+    console.error(err.message);
+    // ❌ process.exit(1) REMOVE
+  }
+};
