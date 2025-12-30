@@ -184,7 +184,7 @@ header{
     header .logo-div .name{
         font-size: 2.8rem;
         font-weight: 700;
-        margin-left: -2rem;
+        margin-left: -3.5rem;
     }
 
     .nav-div ul{
@@ -508,7 +508,7 @@ header{
         width: 90%;
         height: 55rem;
         background-color: #afafaf;
-        background-image: url('../images/projects/tic-tac-toe.webp');
+        background-image: url('../images/projects/tic-tac-toe.png');
         background-repeat: no-repeat;
         background-size: cover;
         background-position: center;
@@ -517,15 +517,15 @@ header{
     }
 
     .project-container #project-2{
-        background-image: url('../images/projects/password-generator.webp');
+        background-image: url('../images/projects/password-generator.png');
     }
 
     .project-container #project-3{
-        background-image: url('../images/projects/counter-app.webp');
+        background-image: url('../images/projects/counter.png');
     }
 
     .project-container #project-4{
-        background-image: url('../images/projects/profile-share.webp');
+        background-image: url('../images/projects/profile-model.png');
     }
 
     .project-card:nth-child(even){
@@ -667,12 +667,12 @@ header{
     /* //// fadded text */
 
     .skill-fadded-text{
-        font-size: 24rem;
+        font-size: 20rem;
         font-weight: 700;
         color: var(--clr-light-gray);
         position: absolute;
         bottom: -8%;
-        right: -17%;
+        right: -1%;
         overflow-y: hidden;
         user-select: none;
         text-transform: capitalize;
